@@ -34,7 +34,7 @@ function LolMobileResult() {
         onClick={(v) => {
           lolStore.onSearch(v);
         }}
-        width={Math.min(lolStore.windowWidth - 150, 500)}
+        width={Math.min(lolStore.windowWidth - 50, 500)}
         height={50}
       />
       <div
