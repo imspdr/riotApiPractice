@@ -2,16 +2,11 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import ThemeToggle from "./common/ThemeToggle";
 import { css } from "@emotion/react";
-import MainPage from "./projects/project0/MainPage";
+import MainPage from "./LolMainPage";
 import { unselectable } from "./common/util";
 
 function App() {
   const navigate = useNavigate();
-  const ChessPage = lazy(() => import("./projects/project1-nqueen/ChessPage"));
-  const SortPage = lazy(() => import("./projects/project2-sort/SortPage"));
-  const LolPage = lazy(() => import("./projects/project3-lol/LolMainPage"));
-  const SuikaPage = lazy(() => import("./projects/project4-suika/SuikaPage"));
-  const PokedamPage = lazy(() => import("./projects/project5-pokedam/PokedamPage"));
   return (
     <div>
       <div
@@ -34,7 +29,7 @@ function App() {
             ${unselectable}
           `}
         >
-          IMSPDR - 개발 연습장
+          IMSPDR - RIOT API 연습
         </div>
         <ThemeToggle />
       </div>
@@ -48,11 +43,6 @@ function App() {
         <Suspense fallback={<div>{"loading"}</div>}>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/chess" element={<ChessPage />} />
-            <Route path="/sort" element={<SortPage />} />
-            <Route path="/lol" element={<LolPage />} />
-            <Route path="/suika" element={<SuikaPage />} />
-            <Route path="/pokedam" element={<PokedamPage />} />
           </Routes>
         </Suspense>
       </div>

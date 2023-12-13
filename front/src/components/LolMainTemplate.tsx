@@ -22,22 +22,20 @@ function LolMainTemplate() {
   }, []);
 
   return (
-    <CommonTemplate title="LOL 전적 검색" width={lolStore.windowWidth}>
-      <div
-        css={css`
-          margin-top: 20px;
-        `}
-      >
-        {lolStore.windowWidth > 1400 && <LolHiddenButton />}
-        {!lolStore.showResult ? (
-          <LolSearch />
-        ) : lolStore.windowWidth > 1400 ? (
-          <LolResult />
-        ) : (
-          <LolMobileResult />
-        )}
-      </div>
-    </CommonTemplate>
+    <div
+      css={css`
+        margin-top: 20px;
+      `}
+    >
+      {lolStore.windowWidth > 1400 && <LolHiddenButton />}
+      {!lolStore.showResult ? (
+        <LolSearch />
+      ) : lolStore.windowWidth > 1400 ? (
+        <LolResult />
+      ) : (
+        <LolMobileResult />
+      )}
+    </div>
   );
 }
 

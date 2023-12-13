@@ -23,10 +23,6 @@ module.exports = (env) => {
         template: path.resolve(__dirname, "src/index.ejs"),
         filename: "index.html",
       }),
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src/404.html"),
-        filename: "404.html",
-      }),
       new CleanWebpackPlugin(),
     ],
     module: {
