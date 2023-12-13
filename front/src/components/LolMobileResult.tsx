@@ -76,7 +76,7 @@ function LolMobileResult() {
         ) : (
           user && (
             <>
-              <ProfileCard user={user} width={Math.min(lolStore.windowWidth - 120, 700)} />
+              <ProfileCard user={user} width={Math.min(lolStore.windowWidth - 20, 700)} />
               <div
                 css={css`
                   margin-top: 10px;
@@ -91,11 +91,11 @@ function LolMobileResult() {
                         `}
                         onClick={() => setGameIndex((v) => (v === index ? -1 : index))}
                       >
-                        <GameCard game={game} width={Math.min(lolStore.windowWidth - 120, 700)} />
+                        <GameCard game={game} width={Math.min(lolStore.windowWidth - 20, 700)} />
                       </div>
                       {index === gameIndex && (
                         <GameDetail
-                          width={Math.min(lolStore.windowWidth - 120, 700)}
+                          width={Math.min(lolStore.windowWidth - 20, 700)}
                           participants={user.lastGames[gameIndex]!.participants}
                         />
                       )}
