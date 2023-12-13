@@ -21,6 +21,7 @@ module.exports = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "src/index.ejs"),
+        favicon: "imspdr.png",
         filename: "index.html",
       }),
       new CleanWebpackPlugin(),

@@ -3,6 +3,7 @@ import { observer } from "mobx-react";
 import { useLolMainStore } from "../store/LolMainStoreProvider";
 import CommonLoading from "@src/common/CommonLoading";
 import CommonSearchBar from "@src/common/CommonSearchBar";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { unselectable } from "@src/common/util";
 import { useEffect, useState } from "react";
@@ -42,7 +43,7 @@ function LolResult() {
           `}
           onClick={() => (lolStore.showResult = false)}
         >
-          {"<"}
+          <ArrowBackIosNewIcon />
         </div>
         <CommonSearchBar
           onEnter={(v) => {
