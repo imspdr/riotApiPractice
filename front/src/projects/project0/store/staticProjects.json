@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "pos": {
+      "x": 500,
+      "y": 200
+    },
+    "radius": 100,
+    "title": "N퀸 문제",
+    "description": "NP-complete 문제인 n-queen 문제 구현하기 + 간단한 설명",
+    "route": "chess",
+    "tag": ["짧은 글", "알고리즘 시각화"],
+    "icon": "queen"
+  },
+  {
+    "id": 2,
+    "pos": {
+      "x": 800,
+      "y": 200
+    },
+    "radius": 100,
+    "title": "정렬 시각화",
+    "description": "bubble, merge, quick 정렬 과정을 시각화",
+    "route": "sort",
+    "tag": ["알고리즘 시각화"],
+    "icon": "sort"
+  },
+  {
+    "id": 4,
+    "pos": {
+      "x": 1300,
+      "y": 200
+    },
+    "radius": 100,
+    "title": "수박 게임",
+    "description": "직접 만든 유사 물리엔진으로 수박 게임 구현하기",
+    "route": "suika",
+    "tag": ["웹 게임"],
+    "icon": "suika"
+  },
+  {
+    "id": 5,
+    "pos": {
+      "x": 1500,
+      "y": 200
+    },
+    "radius": 100,
+    "title": "포켓몬 데미지 계산기",
+    "description": "포켓몬 데미지 계산기",
+    "route": "pokedam",
+    "tag": ["상태 관리"],
+    "icon": "pokedam"
+  }
+]

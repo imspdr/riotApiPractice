@@ -1,0 +1,15 @@
+[
+  {
+    "id": 3,
+    "pos": {
+      "x": 1100,
+      "y": 200
+    },
+    "radius": 100,
+    "title": "롤 전적검색",
+    "description": "Riot API를 이용한 모의 전적검색 사이트 만들기 (pc버전에서 RIOT API token을 업데이트해야 사용가능합니다)",
+    "route": "lol",
+    "tag": ["open API"],
+    "icon": "lol"
+  }
+]
