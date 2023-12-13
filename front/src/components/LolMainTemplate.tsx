@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import LolResult from "./LolResult";
 import LolSearch from "./LolSearch";
 import LolHiddenButton from "./LolHiddenButton";
-import CommonTemplate from "@src/common/CommonTemplate";
 import LolMobileResult from "./LolMobileResult";
 
 function LolMainTemplate() {
