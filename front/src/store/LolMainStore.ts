@@ -4,6 +4,7 @@ import { lolUser, participant } from "./types";
 
 class LolMainStore {
   public nowUsers: lolUser[];
+  public addingFlag: boolean;
 
   private __windowWidth: number;
   private __nowIndex: number;
@@ -19,6 +20,7 @@ class LolMainStore {
     this.__nowIndex = 0;
     this.__windowWidth = width;
 
+    this.addingFlag = false;
     this.nowUsers = [];
 
     makeAutoObservable(this);
@@ -151,6 +153,8 @@ class LolMainStore {
     }
   };
   getMoreMatch = async () => {
+    if(this.addingFlag) return;
+    this.addingFlag = true;
     const nowUser = this.nowUsers[this.nowIndex];
     if (nowUser) {
       const puuid = nowUser.puuid;
@@ -191,6 +195,8 @@ class LolMainStore {
         }
       }
     }
+
+    this.addingFlag = false;
   };
 }
 
