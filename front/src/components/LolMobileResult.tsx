@@ -108,8 +108,8 @@ function LolMobileResult() {
                       display: flex;
                       flex-direction: column;
                       align-items: center;
-                      height: 30px;
-                      width: 100px;
+                      height: 50px;
+                      width: ${Math.min(lolStore.windowWidth - 40, 700)}px;
                     `}
                     onClick={() => lolStore.getMoreMatch()}
                   >
