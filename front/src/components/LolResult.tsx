@@ -17,7 +17,7 @@ function LolResult() {
   const user = lolStore.nowUsers[lolStore.nowIndex];
   useEffect(() => {
     setGameIndex(-1);
-  }, [lolStore.nowIndex]);
+  }, [lolStore.loading]);
   return (
     <div
       css={css`
