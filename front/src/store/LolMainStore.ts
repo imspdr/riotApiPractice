@@ -4,7 +4,8 @@ import { lolUser, participant } from "./types";
 
 class LolMainStore {
   public nowUsers: lolUser[];
-  public addingFlag: boolean;
+
+  private __addingFlag: boolean;
 
   private __windowWidth: number;
   private __nowIndex: number;
@@ -20,7 +21,7 @@ class LolMainStore {
     this.__nowIndex = 0;
     this.__windowWidth = width;
 
-    this.addingFlag = false;
+    this.__addingFlag = false;
     this.nowUsers = [];
 
     makeAutoObservable(this);
@@ -39,6 +40,12 @@ class LolMainStore {
   }
   get windowWidth() {
     return this.__windowWidth;
+  }
+  get addingFlag() {
+    return this.__addingFlag;
+  }
+  set addingFlag(bool: boolean) {
+    this.__addingFlag = bool;
   }
   set nowIndex(num: number) {
     this.__nowIndex = num;
@@ -71,6 +78,7 @@ class LolMainStore {
   };
 
   onSearch = async (name: string) => {
+    if (this.addingFlag) return;
     if (name.length > 0) {
       this.showResult = true;
       this.loading = true;
@@ -85,6 +93,7 @@ class LolMainStore {
       }
 
       const userInfo = await RiotAPI.getPuuid(name);
+      this.addingFlag = true;
       if (userInfo) {
         const userid = userInfo.userid;
         const puuid = userInfo.puuid;
@@ -150,15 +159,16 @@ class LolMainStore {
         this.loading = false;
         this.nowIndex = -1;
       }
+      this.addingFlag = false;
     }
   };
   getMoreMatch = async () => {
-    if(this.addingFlag) return;
-    this.addingFlag = true;
+    if (this.addingFlag) return;
     const nowUser = this.nowUsers[this.nowIndex];
     if (nowUser) {
       const puuid = nowUser.puuid;
       const name = nowUser.name;
+      this.addingFlag = true;
       const matchList = await RiotAPI.getMatchList(puuid, nowUser.lastGames.length, 10);
       if (matchList) {
         for (let i = 0; i < matchList.length; i++) {
@@ -194,9 +204,8 @@ class LolMainStore {
           }
         }
       }
+      this.addingFlag = false;
     }
-
-    this.addingFlag = false;
   };
 }
 
